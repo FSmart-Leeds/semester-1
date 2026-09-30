@@ -26,4 +26,17 @@ print("Projected savings for the year:", proj_sav)
 
 proj_sav_and_interest = proj_sav + proj_sav * 0.008
 proj_sav_and_interest = "£"+str(round(proj_sav_and_interest,2))       # rounds to 2 d.p then converts to string then adds £ to the front
+after_decimal = False
+digits_after_decimal = 0
+for item in proj_sav_and_interest:
+    if after_decimal == True:
+        digits_after_decimal += 1
+    if item == '.':
+        after_decimal = True
+
+if digits_after_decimal == 1:
+    proj_sav_and_interest = proj_sav_and_interest+"0"
+elif digits_after_decimal == 0:
+    proj_sav_and_interest = proj_sav_and_interest+".00"
+
 print("Projected savings for the year with interest:", proj_sav_and_interest)
