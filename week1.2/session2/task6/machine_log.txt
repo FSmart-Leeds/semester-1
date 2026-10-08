@@ -1,0 +1,3 @@
+[Warning]: Machine's temperature is too high. Shutdown recommended.
+Pressure is low and the system is operating normally.
+[Warning]: Machine is running in unsafe conditions and shutting down is recommended.
