@@ -15,3 +15,5 @@
    ```
 
 3. Press `Ctrl+D` to exit the interpreter.
+
+I was right
