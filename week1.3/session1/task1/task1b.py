@@ -8,5 +8,6 @@ while fruit:
 
 
 # Why does this work?
-
+# pop removes the item from the last index and returns it
 # What features of Python does it rely on?
+# lists are mutable and can be changed
