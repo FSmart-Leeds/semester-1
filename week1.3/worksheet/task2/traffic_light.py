@@ -1,17 +1,34 @@
 """
 Portfolio Task - Week 1.3
 By submitting this code you are declaring that all work in this file, other than any provided template code, was written and developed by you independently.
-Name: 
+Name: Frederick William Smart 
 """
 
 states = { "red":4, "red_amber":3, "green":5, "amber":3 }
 
 systime = 0
+lighttime = 0
 maxtime = int(input())  # read an integer number of steps (>0)
 
 state = "red"
 
-print(f"Time {systime:03} State {state}")
+while systime != maxtime + 1:
+    print(f"Time {systime:03} State {state}")
+    systime += 1
+    lighttime += 1
+    if lighttime == states[state]:
+        switch = ""
+        next_one = False
+        for light in states.keys():
+            if next_one:
+                switch = light
+                next_one = False
+            if light == state:
+                next_one = True
+        if switch == "":
+            switch = "red"
+        state = switch
+        lighttime = 0
 
 # Simulate the traffic light system up to time=maxtime in 1-second steps
 

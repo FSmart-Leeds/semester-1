@@ -2,6 +2,16 @@
 
 L = int(input("Length of sequence: ")) # this should be your only input
 
+sequence = []
+while L > 0:
+    if sequence == []:
+        sequence.append(0)
+    else:
+        number = sequence[len(sequence) - 1] - len(sequence)
+        if number < 0 or number in sequence:
+            number = sequence[len(sequence) - 1] + len(sequence)
+        sequence.append(number)
+    L = L - 1
 
 # Your code for the Recaman Sequence
 # You should store the sequence in an appropriate data structure named 'sequence'
