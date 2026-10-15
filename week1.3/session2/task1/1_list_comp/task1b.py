@@ -13,5 +13,5 @@ for i in values:
 
 print(newval)
 
-# write the list comprehension equivalent to the `for` loop
+# write the lit comprehension equivalent to the `for` loop
 
