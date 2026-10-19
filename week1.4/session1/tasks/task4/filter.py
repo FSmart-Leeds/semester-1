@@ -18,3 +18,6 @@ def filter_positive_numbers(numbers):
         list of int: A list containing only the positive integers.
     """
     return [num for num in numbers if num > 0]
+input = input().split(" ")
+input = [int(s) for s in input]
+print(filter_positive_numbers(input))

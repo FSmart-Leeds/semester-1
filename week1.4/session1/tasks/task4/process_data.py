@@ -17,7 +17,7 @@ def process_data(data):
         data (list of int): The list of integers to process.
 
     Returns:
-        int: The sum of all integers in the list or None if empty.
+        int: The sum of all integers in the list or 0 if empty.
     """
     if not data:
         return 0

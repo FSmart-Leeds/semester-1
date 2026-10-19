@@ -17,5 +17,5 @@ def check_vote_eligibility(age):
 
 age = int(input("Enter your age: "))
 check_vote_eligibility(age)
-
 # what is the return value from check_vote_eligibility?
+# check_vote_eligibility does not return any value it writes directly to standard output
