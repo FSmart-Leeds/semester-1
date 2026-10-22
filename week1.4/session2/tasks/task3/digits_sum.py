@@ -19,9 +19,14 @@ def digits_sum(number):
     """
     # complete your code here
     # base case
-
+    digit = int(str(number)[0])
+    
+    if digit == number:
+        return number
+    
     # recursive case
-
+    leftover = number - (digit * 10 ** (len(str(number)) - 1)) 
+    return digit + digits_sum(leftover)
 
 # check if correct output is produced
 print(digits_sum(987))  # Output: 24

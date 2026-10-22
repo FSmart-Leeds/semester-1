@@ -18,6 +18,23 @@ def most_frequent_string(votes):
     """
 
     # Your task is to complete the body of the function based on the details in the docstring.
+    votes_count = dict()
+    for item in votes:
+        try:
+            votes_count[item] += 1
+        except:
+            votes_count[item] = 1
+    max = 0
+    str = ""
+    for name,count in votes_count.items():
+        if count > max:
+            str = name
+            max = count
+
+    if max == 0 and str == "":
+        max = None
+        str = None 
+    return (str,max)
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types
 

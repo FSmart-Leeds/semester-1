@@ -18,6 +18,13 @@ def odd_even(lstIntegers):
     """
 
     # Complete your code here
+    list = [0, 0]
+    for int in lstIntegers:
+        if int % 2 == 0:
+            list[1] += 1
+        else:
+            list[0] += 1
+    return list
 
 
 # Check if correct output is produced

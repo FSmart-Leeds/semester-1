@@ -1,3 +1,4 @@
+from pathlib import Path
 
 # PGM functions that we write
 
@@ -8,11 +9,15 @@ def readPGM( filename ):
     Output: tuple of PGM image data
     '''
 
+    if not Path(filename).exists():
+        exit(f"The path {filename} does not exist")
     with open(filename,"r") as f:    # read in the file
         data = f.readlines()
         
     data = [line.strip().split() for line in data[1:]] # clean the space-separated data, skip the first line
-          
+    if data[0][0] == '#':
+        data = data[1:]
+
     width = int(data[0][0]) # store the data - compare to the text in the file
     height = int(data[0][1])
     max_gray = int(data[1][0])
@@ -50,7 +55,7 @@ def invertPGM( image ):
 
 # code to test the PGM functions
 
-image = readPGM("images/feep.pgm")
+image = readPGM("images/with_comment.pgm")
 
 print(f"Image with width {image[0]} and height {image[1]}")
 print(f"{image[3]}")
