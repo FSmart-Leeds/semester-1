@@ -21,23 +21,49 @@ class Dataset:
 
         Any existing data will be deleted.
         """
+        with open(filename) as f:
+            data = f.readline()
+        add = True
+        current = ""
+        for s in data:
+            if s == '[' or s == ']' or s == ' ':
+                continue
+            if s == ',':
+                add = True
+                continue
+                        
+            if add:
+                self.data.append(int(current+s))
+            else:
+                current = current+s
 
     def __len__(self):
         """
         Returns the size of this Dataset.
         """
+        return len(self.data)
 
     def __getitem__(self, index):
         """
         Returns the value at the specified position in this Dataset.
         """
+        return self.data[index]
 
     def mean(self):
         """
         Returns the arithmetic mean of the values in this Dataset.
         """
+        return (sum(self.data) / len(self.data))
 
     def median(self):
         """
         Returns the median of the values in this Dataset.
         """
+        templist = []
+        for item in self.data:
+            templist.append(item)
+        templist.sort()
+        if len(templist) % 2 == 0:
+            return (templist[(len(templist) / 2) - 1] + templist[len(templist) / 2]) / 2
+        else:
+            return (templist[(len(templist) // 2)])
