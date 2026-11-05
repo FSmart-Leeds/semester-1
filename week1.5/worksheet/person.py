@@ -33,10 +33,6 @@ class Person:
         Returns true if the persons birthday is today, false if not
         """
         today = date.today()
-        if today == self.birth:
+        if today.month == self.birth.month and today.day == self.birth.day:
             return True
         return False
-
-p = Person("Freddie William Smart", date(2026,10,30))
-print(p.initials())
-print(p.is_birthday())
