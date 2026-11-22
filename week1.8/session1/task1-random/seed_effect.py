@@ -2,8 +2,11 @@
 
 import random
 
-random.seed(10)
-
+random.seed(123890)
+'''
+This sets the seed that random uses
+As a result of this when the seed is set to be the same there will be the same outputs
+'''
 num1 = random.randint(1, 100)
 num2 = random.randint(1, 100)
 num3 = random.randint(1, 100)

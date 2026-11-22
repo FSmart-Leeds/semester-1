@@ -19,13 +19,21 @@ def show_histogram_of_ramen_scores(data):
     '''
     Create a histogram to show the distribution of numbers of stars given to ramen.
     '''
+
     pass
 
 def show_bar_chart_stars_per_manufacturer(data):
     '''
     Create a bar chart showing the average rating per manufacturer
     '''
-    pass
+    print(data)
+    data = data.copy()
+    data["Stars"] = pd.to_numeric(data["Stars"], errors="coerce")
+    data = data.groupby("Brand").sum(numeric_only=True)
+    print(data)
+    data = data["Stars"]
+    data.plot(kind="bar")
+    plt.plot()
 
 def show_bar_chart_stars_per_country(data):
     '''
@@ -105,9 +113,9 @@ while True:
         case "1":
             show_histogram_of_ramen_scores(ramen_data)
         case "2":
-            show_bar_chart_stars_per_manufacturer(ramen_data)
-        case "3":
             show_bar_chart_stars_per_country(ramen_data)
+        case "3":
+            show_bar_chart_stars_per_manufacturer(ramen_data)
         case "4":
             country = input("Enter country: ").title()
             find_best_per_country(ramen_data, country)

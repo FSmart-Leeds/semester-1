@@ -26,14 +26,14 @@ print(response.status_code)
 data = response.json()
 
 # raw data output
-print(data)
+#print(data)
 
 # extract the temperature data as lists from the JSON dictionary
 temp_data = data['days']
 
 print(temp_data)
 
-# use pandas to convert data to  dataframe
+# use pandas to convert data to dataframe
 
 df = pd.DataFrame(temp_data)
 
@@ -41,11 +41,26 @@ df = pd.DataFrame(temp_data)
 
 df.plot()
 
-plt.show()
-
 # annotate the graph with axis labels
+plt.xlabel("days")
+plt.ylabel("temperature in F")
 
 # note that temperature is in Farenheit (F)
 # convert to Celcius before plotting 
+celcius_data = []
+for temp in temp_data:
+    t = {}
+    t["tempmax"] = (temp["tempmax"] - 32) * 5/9
+    t["tempmin"] = (temp["tempmin"] - 32) * 5/9
+    t["temp"] = (temp["temp"] - 32) * 5/9
+    print(t)
+    celcius_data.append(t)
+
+df = pd.DataFrame(celcius_data)
+df.plot()
+plt.xlabel("days")
+plt.ylabel("temperature in C")
 
 # using the documentation explore other data, eg. rainfall  
+
+plt.show()

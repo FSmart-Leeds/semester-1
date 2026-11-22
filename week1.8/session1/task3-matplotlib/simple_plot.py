@@ -7,7 +7,8 @@ y = [ k*k for k in x ]      # create a simple function y=x^2
 plt.plot(x,y)  # create a 2d plot
 
 plt.xlabel('x')
-plt.ylabel('y=x^2')  # annotate
+plt.ylabel('y')  # annotate
+plt.title('y=x^2')
 
 plt.show()  # display
 

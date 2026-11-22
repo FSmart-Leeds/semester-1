@@ -41,7 +41,7 @@ print(total_daily_sales)
 # and once you're happy that you have a dataframe with the right stuff in it, you can plot it:
 total_daily_sales.plot(kind="line")
 # then finally, remember to plt.show() which displays the graph.
-plt.show()
+#plt.show()
 
 
 # We can do the same to sort by category - this time, we can make a bar chart:
@@ -51,17 +51,20 @@ sales_per_category = sales_per_category["Total_Price"]
 
 # this time, we add some colour to our graph:
 sales_per_category.plot(kind="bar", color="#eff542", title="Sales per Category")
-plt.show()
+#plt.show()
 
 
 # And finally, let's do a pie chart of sales per category:
 # we can re-use our existing dataframe for this.
 sales_per_category.plot(kind="pie", colors=["#E57A44", "#8AB9B5", "#F5E6E8", "#481620"])
-plt.show()
+#plt.show()
 
 # To practice, here are some tasks to use - remember, the original data is named shop_data
 
 # Create a pie chart to show sales per product
-
-
-
+sales_per_product = shop_data.groupby("Product").sum(numeric_only=True)
+print(sales_per_product)
+sales_per_product = sales_per_product["Units_Sold"]
+print(sales_per_product)
+sales_per_product.plot(kind="pie")
+plt.show()
