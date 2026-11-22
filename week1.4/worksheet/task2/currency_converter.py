@@ -11,6 +11,10 @@
 
 def currency_converter(amount, from_currency, to_currency):
 
+    '''
+    This function takes an amount of money and the type of money it is as well as the money for it to be converted into
+    '''
+
     conversion_rate = {
         'GBP': {'CNY': 9.24, 'PHP': 75.00, 'INR': 109.06},
         'CNY': {'GBP': 0.11, 'PHP': 8.12, 'INR': 11.81},
